@@ -4,15 +4,16 @@
 
 ホームディレクトリにdotfilesリポジトリをクローンします
 
----bash
+```bash
 cd ~
 git clone https://github.com/gitchx/dotfiles.git
----
+```
+
 
 Stowでシンポリックリンクを作成します。
 ※ コピー先のディレクトリはバックアップしてください
 
----bash
+```bash
 cd ~/dotfiles
 stow -t ~ nvim
----
+```
