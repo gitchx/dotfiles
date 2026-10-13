@@ -80,5 +80,20 @@ config.keys = require("keybinds").keys
 config.key_tables = require("keybinds").key_tables
 config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 2000 }
 
-return config
+local mod = wezterm.target_triple:find('apple') and 'SUPER' or 'CTRL|SHIFT'
 
+-- コピー
+table.insert(config.keys, {
+  key = "c",
+  mods = mod,
+  action = wezterm.action.CopyTo("Clipboard"),
+})
+
+-- ペースト
+table.insert(config.keys, {
+  key = "v",
+  mods = mod,
+  action = wezterm.action.PasteFrom("Clipboard"),
+})
+
+return config
