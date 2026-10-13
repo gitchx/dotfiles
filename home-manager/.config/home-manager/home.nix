@@ -1,23 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  home.username = "soma";
-  home.homeDirectory = "/Users/soma";
-
-  home.stateVersion = "26.05";
-
-  home.packages = with pkgs; [
-    neovim
-  ];
-
-  home.file = {
-  };
-
-  home.sessionVariables = {
-  };
-
-  programs.home-manager.enable = true;
-  
-  nix.package = pkgs.nix;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  imports = [
+    ./common.nix
+  ] ++ (
+    if pkgs.stdenv.isDarwin
+    then [ ./darwin.nix ]
+    else [ ./linux.nix ]
+  );
 }
