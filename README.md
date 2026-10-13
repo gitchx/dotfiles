@@ -1,6 +1,6 @@
-# 設定ファイルをまとめています
+### 設定ファイルをまとめています
 
-## symlink farm managerのGNU Stowを使ってNeovimなどの設定をコピーできます
+#### symlink farm managerのGNU Stowを使ってNeovimなどの設定をコピーできます
 
 ホームディレクトリにdotfilesリポジトリをクローンします
 
