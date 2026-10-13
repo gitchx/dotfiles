@@ -80,20 +80,26 @@ config.keys = require("keybinds").keys
 config.key_tables = require("keybinds").key_tables
 config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 2000 }
 
-local mod = wezterm.target_triple:find('apple') and 'SUPER' or 'CTRL|SHIFT'
+----------------------------------------------------
+-- Linux
+----------------------------------------------------
+if wezterm.target_triple:find("linux") then
+  -- Font
+  config.font = wezterm.font("Noto Sans Mono CJK JP")
 
--- コピー
-table.insert(config.keys, {
-  key = "c",
-  mods = mod,
-  action = wezterm.action.CopyTo("Clipboard"),
-})
+  -- Copy
+  table.insert(config.keys, {
+    key = "c",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.CopyTo("Clipboard"),
+  })
 
--- ペースト
-table.insert(config.keys, {
-  key = "v",
-  mods = mod,
-  action = wezterm.action.PasteFrom("Clipboard"),
-})
+  -- Paste
+  table.insert(config.keys, {
+    key = "v",
+    mods = "CTRL|SHIFT",
+    action = wezterm.action.PasteFrom("Clipboard"),
+  })
+end
 
 return config
