@@ -1,5 +1,7 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
 {
-  home.homeDirectory = "/home/soma";
+  config = lib.mkIf pkgs.stdenv.isLinux {
+    home.homeDirectory = "/home/soma";
+  };
 }
