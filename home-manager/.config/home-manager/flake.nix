@@ -11,12 +11,12 @@
   };
 
   outputs = { nixpkgs, home-manager, ... }: {
-    homeConfigurations."soma" =
+    homeConfigurations."macbook-air" =
       home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.aarch64-darwin;
 
         modules = [
-          ./home.nix
+          ./hosts/macbook-air.nix
         ];
       };
   };
