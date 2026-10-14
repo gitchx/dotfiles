@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     neovim
     wezterm
+    stow
   ];
 
   programs.home-manager.enable = true;
