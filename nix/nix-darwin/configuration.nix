@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+  system.primaryUser = "soma";
+
   environment.systemPackages = [
     pkgs.vim
   ];
@@ -17,4 +19,28 @@
   system.stateVersion = 6;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  # Homebrewの管理を有効化
+  homebrew = {
+    enable = true;
+
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "none";
+    };
+
+    brews = [
+      "wget"
+    ];
+
+    casks = [
+      # "firefox"
+    ];
+  };
+
+  # HomebrewのPATHを追加
+  environment.systemPath = [
+    "/opt/homebrew/bin"
+    "/opt/homebrew/sbin"
+  ];
 }
