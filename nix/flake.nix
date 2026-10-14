@@ -34,7 +34,7 @@
         ];
       };
 
-    nixosConfigurations.thinkpad =
+    nixosConfigurations.nixos =
       nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -45,7 +45,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.soma = {
               imports = [
-                ./home-manager/hosts/thinkpad.nix
+                ./home-manager/hosts/thinkpad-t480s.nix
               ];
             };
           }
