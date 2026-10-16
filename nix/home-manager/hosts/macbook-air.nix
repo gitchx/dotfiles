@@ -5,6 +5,8 @@
     ../common.nix
   ];
 
+  home.stateVersion = "26.05";
+
   home.homeDirectory = "/Users/soma";
 
   targets.darwin.copyApps = {

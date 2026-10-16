@@ -2,13 +2,13 @@
 
 {
   home.username = "soma";
-  home.stateVersion = "26.05";
 
   home.packages = with pkgs; [
     neovim
     wezterm
     stow
-    codex
+  ] ++ lib.optionals (pkgs ? codex) [
+    pkgs.codex
   ];
 
   programs.home-manager.enable = true;
