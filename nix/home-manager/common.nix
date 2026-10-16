@@ -4,9 +4,9 @@
   home.username = "soma";
 
   home.packages = with pkgs; [
-    neovim
     wezterm
     stow
+    gh
   ] ++ lib.optionals (pkgs ? codex) [
     pkgs.codex
   ];

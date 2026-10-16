@@ -19,4 +19,7 @@
     "nix-command"
     "flakes"
   ];
+  home.packages = with pkgs; [
+    neovim
+  ];
 }
