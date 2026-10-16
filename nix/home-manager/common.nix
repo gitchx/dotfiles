@@ -8,6 +8,7 @@
     neovim
     wezterm
     stow
+    codex
   ];
 
   programs.home-manager.enable = true;
