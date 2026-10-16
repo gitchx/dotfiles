@@ -71,6 +71,8 @@ return {
 		{ key = "c", mods = "SUPER", action = act.CopyTo("Clipboard") },
 		-- 貼り付け
 		{ key = "v", mods = "SUPER", action = act.PasteFrom("Clipboard") },
+		-- Codexの改行（Ctrl+J相当）
+		{ key = "Enter", mods = "SHIFT", action = act.SendKey({ key = "j", mods = "CTRL" }) },
 
 		-- Pane作成 leader + r or d
 		{ key = "d", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
