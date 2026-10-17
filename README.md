@@ -24,18 +24,20 @@ stow -t ~ nvim
 
 
 Nix 2.24.14 をインストールする
----bash
-curl -L https://releases.nixos.org/nix/nix-2.24.14/install | sh
----
 
----bash
+'''bash
+curl -L https://releases.nixos.org/nix/nix-2.24.14/install | sh
+'''
+
+'''bash
 nix \
   --extra-experimental-features 'nix-command flakes' \
   build .#darwinConfigurations.macbook-air-2012.system
----
+'''
 
 ビルドする場合
----bash
+
+'''bash
 sudo -H darwin-rebuild switch \
   --flake ~/dotfiles/nix#macbook-air-2012
----
+'''
