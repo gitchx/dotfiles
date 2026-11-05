@@ -1,3 +1,4 @@
 .DS_Store
 ssh/.ssh/*
 !ssh/.ssh/config
+mba2012_linux/nvim/.config/nvim/lazy-lock.json
