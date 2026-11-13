@@ -56,7 +56,7 @@ return {
 		-- Tab入れ替え
 		{ key = "{", mods = "LEADER", action = act({ MoveTabRelative = -1 }) },
 		-- Tab新規作成
-		{ key = "t", mods = "SUPER", action = act({ SpawnTab = "CurrentPaneDomain" }) },
+		{ key = "t", mods = "CTRL", action = act({ SpawnTab = "CurrentPaneDomain" }) },
 		-- Tabを閉じる
 		{ key = "w", mods = "SUPER", action = act({ CloseCurrentTab = { confirm = true } }) },
 		{ key = "}", mods = "LEADER", action = act({ MoveTabRelative = 1 }) },
@@ -119,13 +119,13 @@ return {
 		},
 		{
 			key = "g",
-			mods = "CMD|SHIFT",
+			mods = "CTRL|SHIFT",
 			action = wezterm.action.SplitPane({
 				direction = "Right",
 				size = { Percent = 45 },
 				command = {
 					args = {
-						"/bin/zsh",
+						"/bin/bash",
 						"-lc",
 						"exec codex",
 					},
